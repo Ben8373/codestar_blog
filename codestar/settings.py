@@ -86,7 +86,7 @@ WSGI_APPLICATION = 'codestar.wsgi.application'
 # }
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL", "sqlite:///db.sqlite3"))
+    'default': dj_database_url.parse(os.environ.get("DATABASE_URL") or "sqlite:///db.sqlite3")
 }
 
 
