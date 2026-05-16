@@ -7,9 +7,9 @@ class PostAdmin(admin.ModelAdmin):
     list_filter = ('status', 'created_on')
     search_fields = ('title', 'content')
     prepopulated_fields = {'slug': ('title',)}
-
+    
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'body', 'post', 'created_on')
+    list_display = ('name', 'email', 'post', 'created_on')
     list_filter = ('created_on',)
     search_fields = ('name', 'email', 'body')
