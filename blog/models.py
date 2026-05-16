@@ -8,7 +8,7 @@ class Post(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(
-        User, on_delete=models.CASCADE, related_name="blog_posts"
+        User, on_delete=models.CASCADE, related_name="blog_posts")
     
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -21,4 +21,4 @@ class Comments(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="commenter")
     body = models.TextField()
     approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add_=True)
+    created_on = models.DateTimeField(auto_now_add=True)
