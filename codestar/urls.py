@@ -22,6 +22,7 @@ from django.views.generic import RedirectView
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path("about/", include("aboutapp.urls")),
     path("admin/", admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path("blog/", include("blog.urls")),
