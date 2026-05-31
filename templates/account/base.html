@@ -22,7 +22,7 @@
     </div>
     {% endif %}
 
-    <div>
+      <div>
       <strong>{% trans "Menu:" %}</strong>
       <ul>
         {% if user.is_authenticated %}
@@ -35,6 +35,11 @@
       </ul>
     </div>
     {% block content %}
+    {% if user.is_authenticated %}
+    <p class="text-end m-3">You are logged in as {{ user }}</p>
+    {% else %}
+    <p class="text-end m-3">You are not logged in</p>
+    {% endif %}
     {% endblock content %}
     {% endblock body %}
     {% block extra_body %}
