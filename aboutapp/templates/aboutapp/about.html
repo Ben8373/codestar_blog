@@ -3,11 +3,38 @@
 
 {% block content %}
 
-<img src="{% static 'images/default.jpg' %}" 
-     alt="Developer at computer" 
-     class="img-fluid rounded mb-4">
+<!-- Hero section: grey panel left, image right -->
+<div class="container-fluid p-0 mb-4">
+    <div class="row g-0">
 
-<h1>{{ about.title }}</h1>
-<div>{{ about.content|safe }}</div>
-<p class="text-muted">Updated on: {{ about.updated_on }}</p>
+        <!-- LEFT: Grey background with white text -->
+        <div class="col-md-6 d-flex align-items-center bg-secondary text-white">
+            <div class="p-4 p-lg-5">
+                <h1 class="h2 mb-3">About This Project</h1>
+                <p class="mb-0">ADMIN | {{ about.updated_on }}</p>
+            </div>
+        </div>
+
+        <!-- RIGHT: Full-height image -->
+        <div class="col-md-6">
+            <img src="{% static 'images/default.jpg' %}"
+                 alt="Developer at computer"
+                 class="img-fluid w-100"
+                 style="height: 100%; object-fit: cover;">
+        </div>
+
+    </div>
+</div>
+
+<!-- Main content -->
+<div class="container mb-5">
+    <div class="col-lg-10 mx-auto">
+        {{ about.content|safe }}
+
+        <p class="text-muted mt-4">
+            Updated on: {{ about.updated_on }}
+        </p>
+    </div>
+</div>
+
 {% endblock %}
