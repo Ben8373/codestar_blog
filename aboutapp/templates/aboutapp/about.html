@@ -1,7 +1,13 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
+
+<img src="{% static 'images/default.jpg' %}" 
+     alt="Developer at computer" 
+     class="img-fluid rounded mb-4">
+
 <h1>{{ about.title }}</h1>
 <div>{{ about.content|safe }}</div>
-<p>Updated on: {{ about.updated_on }}</p>
+<p class="text-muted">Updated on: {{ about.updated_on }}</p>
 {% endblock %}
