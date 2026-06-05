@@ -173,3 +173,15 @@ body {
     color: rgb(222, 146, 168);
 }
 
+.post-subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.5rem;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.separator {
+    color: #aaa;
+}
