@@ -76,11 +76,12 @@ body {
 }
 
 .masthead-text {
+    flex-direction: column;
     background-color: #445261;
     color: white;
     position: relative;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     padding-left: 5%;
     height: 100%;
     width: 50%;
@@ -115,13 +116,8 @@ body {
 
 .post-title {
     margin: 0;
+    margin-bottom: 0.5rem;
     font-size: 2.5rem;
-}
-
-.post-subtitle {
-    margin: 0;
-    color: lightgray;
-    font-size: 0.9rem;
 }
 
 .btn-signup,
