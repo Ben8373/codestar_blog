@@ -20,5 +20,6 @@ class AboutAdmin(SummernoteModelAdmin):
 
 @admin.register(CollaborateRequest)
 class CollaborateRequestAdmin(admin.ModelAdmin):
-
-    list_display = ('message', 'read',)
+    list_display = ("name", "email", "read")
+    list_filter = ("read",)
+    search_fields = ("name", "email", "message")
