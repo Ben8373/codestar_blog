@@ -80,11 +80,12 @@ body {
     background-color: #445261;
     color: white;
     position: relative;
-    display: flex;
+    display: block;
     align-items: flex-start;
-    padding-left: 5%;
+    padding: 5% 0 5% 5%;
     height: 100%;
     width: 50%;
+    justify-content:space-between;
 }
 
 .masthead-image {
@@ -119,6 +120,20 @@ body {
     margin-bottom: 0.5rem;
     font-size: 2.5rem;
 }
+
+.post-meta {
+    display: flex;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+    align-items: center;
+}
+
+.separator {
+    color: #aaa;
+}
+
 
 .btn-signup,
 .btn-edit {
@@ -172,10 +187,11 @@ body {
 .post-subtitle {
     font-size: 0.9rem;
     color: #666;
-    margin-top: 0.5rem;
-    display: flex;
+    margin-top: 0.75rem;
+    display: block;
     gap: 6px;
     align-items: center;
+    width: 100%;
 }
 
 .separator {
