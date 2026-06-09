@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1>Let'sCollaborate</h1>
+
+    <p>
+        I believe in the power of shared knowledge and collective effort. 
+        Whether you have a project, or wish to co-author an article, 
+        or simply want to brainstorm some ideas, I'm excited to hear from you. 
+        Fill out the form and we can get the ball rolling!
+    </p>
+
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <button type="submit" class="btn btn-secondary">Submit</button>
+    </form>
+</div>
+{% endblock %}

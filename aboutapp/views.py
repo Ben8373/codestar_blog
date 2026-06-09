@@ -15,7 +15,21 @@ def about_me(request):
     else:
         form = CollaborateForm()
 
-    return render(request, "about/about.html", {
+    return render(request, "aboutapp/about.html", {
         "about": about,
         "collaborate_form": form
+    })
+
+def collaborate(request):
+    form = CollaborateForm()
+
+    if request.method == "POST":
+        form = CollaborateForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Thanks — I'll be in touch soon!")
+            return redirect("collaborate")
+
+    return render(request, "aboutapp/collaborate.html", {
+        "form": form
     })

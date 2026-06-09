@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import about_me   
+from . import views
 
 urlpatterns = [
-    path("", about_me, name="about"),
+    path("", views.about_me, name="about"),
+    path("collaborate/", views.collaborate, name="collaborate"),
 ]

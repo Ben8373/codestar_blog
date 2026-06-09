@@ -22,12 +22,12 @@ from django.views.generic import RedirectView
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path("about/", include("aboutapp.urls")),
+    path("", include("aboutapp.urls")),
     path("accounts/", include("allauth.urls")),
     path("admin/", admin.site.urls),
     path('summernote/', include('django_summernote.urls')),
     path("blog/", include("blog.urls")),
-    path("", RedirectView.as_view(url="blog/", permanent=False)),
+    path("home", RedirectView.as_view(url="blog/", permanent=False)),
 ]
 
 if settings.DEBUG:

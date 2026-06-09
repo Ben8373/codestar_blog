@@ -1,40 +1,11 @@
 {% extends "base.html" %}
-{% load static %}
-{% load crispy%}
 
 {% block content %}
+<div class="container mt-5 mb-5">
+    <h1 class="mb-4">About Me</h1>
 
-<!-- Hero section: grey panel left, image right -->
-<div class="container-fluid p-0 mb-4">
-    <div class="row g-0">
-
-        <!-- LEFT: Grey background with white text -->
-        <div class="col-md-6 d-flex align-items-center bg-secondary text-white">
-            <div class="p-4 p-lg-5">
-                <h1 class="h2 mb-3">About This Project</h1>
-            </div>
-        </div>
-
-        <!-- RIGHT: Full-height image -->
-        <div class="col-md-6">
-            <img src="{% static 'images/default.jpg' %}"
-                 alt="Developer at computer"
-                 class="img-fluid w-100"
-                 style="height: 350px; object-fit: cover;">
-        </div>
-
-    </div>
-</div>
-
-<!-- Main content -->
-<div class="container mb-5">
-    <div class="col-lg-10 mx-auto">
+    <div class="about-content">
         {{ about.content|safe }}
-
-        <p class="text-muted mt-4">
-            Updated on: {{ about.updated_on }}
-        </p>
     </div>
 </div>
-
 {% endblock %}

@@ -38,6 +38,7 @@ ALLOWED_HOSTS = [
 ]
 
 INSTALLED_APPS = [
+    "aboutapp",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -51,7 +52,6 @@ INSTALLED_APPS = [
     'crispy_forms',
     'crispy_bootstrap5',
     "blog",
-    "aboutapp",
     "django_summernote",
 ]
 
@@ -80,9 +80,7 @@ TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
 
-        "DIRS": [TEMPLATES_DIR],
-        
-
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
