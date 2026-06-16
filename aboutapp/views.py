@@ -10,7 +10,7 @@ def about_me(request):
         form = CollaborateForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, "Thanks — I'll be in touch soon!")
+            messages.success(request, "Thanks — I'll be in touch soon!") 
             return redirect("about")
     else:
         form = CollaborateForm()
