@@ -61,46 +61,34 @@ body {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
-    display: block;
-    height: 50vh;
+    display: inline-block;
+    height: 33vh;
     width: 100%;
-}
-
-.masthead .container {
-    height: 100%;
-}
-
-.masthead .row {
-    height: 100%;
-    align-items: stretch;
 }
 
 .masthead-text {
     background-color: #445261;
     color: white;
     position: relative;
-    display: flex;
-    align-items: center;
-    padding-left: 5%;
-    height: 100%;
-    width: 50%;
 }
 
 .masthead-image {
     position: relative;
     overflow: hidden;
-    height: 100%;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.masthead-image img {
-    width: 100%;
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 150%;
+    background: #445261;
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    transform: skew(15deg);
+    z-index: 100;
 }
 
 .post-link {
@@ -114,14 +102,13 @@ body {
 }
 
 .post-title {
-    margin: 0;
-    font-size: 2.5rem;
+    margin-top: 10%;
+    margin-left: 5%;
 }
 
 .post-subtitle {
-    margin: 0;
+    margin-left: 5%;
     color: lightgray;
-    font-size: 0.9rem;
 }
 
 .btn-signup,
@@ -171,8 +158,4 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
-}
-
-.header-footer-text {
-    font-size: 1.1rem;
 }

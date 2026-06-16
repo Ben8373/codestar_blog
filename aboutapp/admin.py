@@ -8,8 +8,7 @@ from .models import About, CollaborateRequest
 class AboutAdmin(SummernoteModelAdmin):
     summernote_fields = ("content",)
 
-    def __str__(self):
-        return self.title
+   
 
 # Note: admin.ModelAdmin is the standard way of registering
 #       our model with the admin panel. We do it differently
@@ -20,6 +19,5 @@ class AboutAdmin(SummernoteModelAdmin):
 
 @admin.register(CollaborateRequest)
 class CollaborateRequestAdmin(admin.ModelAdmin):
-    list_display = ("name", "email", "read")
-    list_filter = ("read",)
-    search_fields = ("name", "email", "message")
+    list_display = ("message", "read")
+   

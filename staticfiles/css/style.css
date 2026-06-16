@@ -61,48 +61,34 @@ body {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
-    display: block;
-    height: 50vh;
+    display: inline-block;
+    height: 33vh;
     width: 100%;
 }
 
-.masthead .container {
-    height: 100%;
-}
-
-.masthead .row {
-    height: 100%;
-    align-items: stretch;
-}
-
 .masthead-text {
-    flex-direction: column;
     background-color: #445261;
     color: white;
     position: relative;
-    display: block;
-    align-items: flex-start;
-    padding: 5% 0 5% 5%;
-    height: 100%;
-    width: 50%;
-    justify-content:space-between;
 }
 
 .masthead-image {
     position: relative;
     overflow: hidden;
-    height: 100%;
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.masthead-image img {
-    width: 100%;
+.masthead-image:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 90%;
     height: 100%;
-    object-fit: cover;
-    display: block;
+    width: 150%;
+    background: #445261;
+    -webkit-transform: skew(15deg);
+    -moz-transform: skew(15deg);
+    transform: skew(15deg);
+    z-index: 100;
 }
 
 .post-link {
@@ -116,24 +102,14 @@ body {
 }
 
 .post-title {
-    margin: 0;
-    margin-bottom: 0.5rem;
-    font-size: 2.5rem;
+    margin-top: 10%;
+    margin-left: 5%;
 }
 
-.post-meta {
-    display: flex;
-    gap: 8px;
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 1rem;
-    align-items: center;
+.post-subtitle {
+    margin-left: 5%;
+    color: lightgray;
 }
-
-.separator {
-    color: #aaa;
-}
-
 
 .btn-signup,
 .btn-edit {
@@ -182,18 +158,4 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
-}
-
-.post-subtitle {
-    font-size: 0.9rem;
-    color: #666;
-    margin-top: 0.75rem;
-    display: block;
-    gap: 6px;
-    align-items: center;
-    width: 100%;
-}
-
-.separator {
-    color: #aaa;
 }
