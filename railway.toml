@@ -1,2 +1,11 @@
 [build]
-secrets = ["ALLOWED_HOSTS", "SECRET_KEY", "DATABASE_URL"]
+secrets = [
+  "ALLOWED_HOSTS",
+  "SECRET_KEY",
+  "DATABASE_URL",
+  "DEBUG"
+]
+
+[env]
+ALLOWED_HOSTS = "codestarblog-production.up.railway.app"
+DEBUG = "False"
