@@ -1,0 +1,2 @@
+[build]
+secrets = ["ALLOWED_HOSTS", "SECRET_KEY", "DATABASE_URL"]
