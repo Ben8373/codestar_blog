@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ["python312"]
-
-[phases.build]
-cmds = []
-
-[phases.start]
-cmd = "gunicorn codestar.wsgi --bind 0.0.0.0:$PORT"
