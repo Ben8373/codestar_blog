@@ -33,8 +33,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    '.railway.app',
-    'codestarblog-production.up.railway.app',
+    '.herokuapp.com',
+    'codestarblog.herokuapp.com',
 ]
 
 
