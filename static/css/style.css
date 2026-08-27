@@ -57,7 +57,7 @@ body {
     text-transform: uppercase;
 }
 
-.masthead {
+.post-masthead {
     margin-top: 10px;
     overflow: hidden;
     position: relative;
@@ -65,6 +65,8 @@ body {
     height: 33vh;
     width: 100%;
 }
+
+
 
 .masthead-text {
     background-color: #445261;
