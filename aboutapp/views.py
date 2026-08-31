@@ -15,7 +15,7 @@ def about_me(request):
     else:
         form = CollaborateForm()
 
-    return render(request, "aboutapp/about.html", {
+    return render(request, "pages/about.html", {
         "about": about,
         "collaborate_form": form
     })
@@ -30,6 +30,6 @@ def collaborate(request):
             messages.success(request, "Thanks — I'll be in touch soon!")
             return redirect("collaborate")
 
-    return render(request, "aboutapp/collaborate.html", {
+    return render(request, "pages/collaborate.html", {
         "form": form
     })
