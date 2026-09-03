@@ -1,7 +1,7 @@
 const editButtons = document.getElementsByClassName('btn-edit');
 const commentText = document.getElementById('id_body');
-const commentForm = document.getElementById('comment-form');
-const submitButton = document.getElementById('submit-button');
+const commentForm = document.getElementById('commentForm');
+const submitButton = document.getElementById('submitButton');
 
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");
@@ -20,13 +20,16 @@ const deleteConfirm = document.getElementById("deleteConfirm");
  */
 
 for (let button of editButtons) {
-button.addEventListener("click", (e) => {
-let commentId = e.target.getAttribute("comment_id");
-let commentContent = document.getElementById(`comment-content-${commentId}`).innerText;
-commentText.value = commentContent;
-submitButton.innerText = "Update";
-commentForm.setAttribute("action", `edit_comment/${commentId}`)
- });
+    button.addEventListener("click", (e) => {
+        let commentId = e.target.getAttribute("comment_id");
+        let commentContent = document.getElementById(`comment${commentId}`).innerText;
+
+        commentText.value = commentContent;
+        submitButton.innerText = "Update";
+
+        // Correct Django URL
+        commentForm.setAttribute("action", `${window.location.pathname}edit_comment/${commentId}`);
+    });
 }
 
 /**
@@ -38,12 +41,17 @@ Initalizes deletion functionality provided by the delete buttons.
 * - Displays a confirmation modal (`deleteModal`) to prompt the user for conformation before deletion.
 */
 
+
+// DELETE COMMENT
 for (let button of deleteButtons) {
-button.addEventListener("click", (e) => {
-let commentId = e.target.getAttribute("comment_id");
-deleteConfirm.href = `delete_comment/${commentId}`;
-deleteModal.show();
-});
+    button.addEventListener("click", (e) => {
+        let commentId = e.target.getAttribute("comment_id");
+
+        // Correct Django URL
+        deleteConfirm.href = `${window.location.pathname}delete_comment/${commentId}`;
+
+        deleteModal.show();
+    });
 }
 
 
