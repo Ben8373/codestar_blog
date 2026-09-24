@@ -13,7 +13,7 @@
 
 <head>
     <title>CodeStar Blog</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Google Fonts CSS -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -86,7 +86,7 @@
         </div>
     </div>
 
-    <main class="flex-shrink-0 main-bg">
+<main class="flex-shrink-0 main-bg">
         
         <p class="text-end m-3">You are not logged in</p>
         
@@ -95,11 +95,28 @@
 <div class="container mt-5">
   <div class="row">
     <div class="col-12 col-md-4 text-center">
-      <img src="/static/images/nobody.jpg" width="75%">
+      <img src="/static/images/nobody.jpg" class="img-fluid" style="max-width: 75%;" alt="profile picture">
+      {% if "placeholder" in about.profile_image.url %}
+      <img src="{% static 'images/nobody.jpg' %}" width="75%"
+        alt="placeholder image" >
+      {% else %}
+      <img src="{{ about.profile_image.url }}" width="75%"
+        alt="{{ about.title }}">
+      {% endif %}
     </div>
+
     <div class="col-12 col-md-8">
       <h2>About this project</h2>
-      <p><span style="white-space: pre-wrap;">This site was developed as part of my full‑stack software development training, with a focus on building a robust, scalable, and maintainable Django application. The project demonstrates core backend engineering principles, including model‑driven design, secure authentication, structured content management, and clean separation of concerns across the application architecture.</span></p><p><span style="white-space: pre-wrap;">The blog system is powered by Django’s ORM and follows a modular app structure, enabling clear organisation of features and future extensibility. Content is stored in a relational database and exposed through dynamic templates that adapt to user‑generated data. The admin interface has been customised to support rich‑text editing through Django Summernote, allowing site administrators to manage posts, comments, and informational pages without modifying source code.</span></p><p><span style="white-space: pre-wrap;">From a technical perspective, the project showcases the integration of third‑party libraries, environment‑specific configuration, and deployment to a cloud‑based hosting platform. The application is container‑ready, adheres to Django’s security best practices, and is structured to support continuous development and feature expansion.</span></p><p><span style="white-space: pre-wrap;">Beyond the technical implementation, this project reflects my commitment to writing clean, readable code and building user‑focused digital experiences. It serves as both a learning platform and a foundation for more advanced development work, including API integration, enhanced content workflows, and improved front‑end interactivity.</span></p><p><span style="white-space: pre-wrap;">If you would like to explore the codebase, contribute ideas, or discuss the </span>project in more detail, feel free to reach out. This site will continue to evolve as I progress through my development journey and expand my technical capabilities.</p>
+      <p><span style="white-space: pre-wrap;">
+      This site was developed as part of my full‑stack software development training, with a focus on building a robust, scalable, and maintainable Django application. The project demonstrates core backend engineering principles, including model‑driven design, secure authentication, structured content management, and clean separation of concerns across the application architecture.</span></p>
+      
+      <p><span style="white-space: pre-wrap;">The blog system is powered by Django’s ORM and follows a modular app structure, enabling clear organisation of features and future extensibility. Content is stored in a relational database and exposed through dynamic templates that adapt to user‑generated data. The admin interface has been customised to support rich‑text editing through Django Summernote, allowing site administrators to manage posts, comments, and informational pages without modifying source code.</span></p>
+      
+      <p><span style="white-space: pre-wrap;">From a technical perspective, the project showcases the integration of third‑party libraries, environment‑specific configuration, and deployment to a cloud‑based hosting platform. The application is container‑ready, adheres to Django’s security best practices, and is structured to support continuous development and feature expansion.</span></p>
+      
+      <p><span style="white-space: pre-wrap;">Beyond the technical implementation, this project reflects my commitment to writing clean, readable code and building user‑focused digital experiences. It serves as both a learning platform and a foundation for more advanced development work, including API integration, enhanced content workflows, and improved front‑end interactivity.</span></p>
+      
+      <p><span style="white-space: pre-wrap;">If you would like to explore the codebase, contribute ideas, or discuss the </span>project in more detail, feel free to reach out. This site will continue to evolve as I progress through my development journey and expand my technical capabilities.</p>
     </div>
   </div>
   <div class="row">
@@ -110,7 +127,7 @@
   </div>
  
 
-    </main>
+</main>
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
